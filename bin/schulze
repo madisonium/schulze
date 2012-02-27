@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require File.expand_path('../../lib/schulze', __FILE__)
+
+results = Schulze::Election.perform_for_dir_glob(ARGV[1...ARGV.count])
+
+results.each_with_index do |line, idx|
+  puts("%3d %s" % [idx+1, line.inspect])
+end
