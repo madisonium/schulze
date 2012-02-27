@@ -1,24 +1,32 @@
 # Schulze
 
-TODO: Write a gem description
+Calculate the winner of a Schulze method election.
+
+This gem is intended for command-line use, though it may work alright as a library.
+
+## Warning!
+
+This program was designed against a particular use-case... specifically, candidates must have unique last names (where last name is defined as the last element of a `split`). This was done because data on first names tends to be unclean (e.g., "Tim" & "Timothy" are the same person).
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'schulze'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install it:
 
     $ gem install schulze
 
 ## Usage
 
-TODO: Write usage instructions here
+Collect ballots in a directory. Each ballot should be a file in the form:
+
+    1 A
+    2 B
+    3 C1
+    3 C2
+    4 D
+
+Then, run the program:
+
+    $ schulze directory/to/ballots/*.txt
 
 ## Contributing
 
